@@ -16,3 +16,15 @@ def index(request) -> HttpResponse:
             return render(request, "dashboard/index.html", {"profile": get_profile})
     else:
         return redirect("/account/login")
+
+def papers(request) -> HttpResponse:
+    if request.user.is_authenticated and request.user.is_active:
+        return render(request,'dashboard/papers.html')
+    else:
+        return redirect("/account/login")
+
+def patents(request) -> HttpResponse:
+    if request.user.is_authenticated and request.user.is_active:
+        return render(request,'dashboard/patents.html')
+    else:
+        return redirect("/account/login")

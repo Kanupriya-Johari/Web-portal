@@ -15,12 +15,12 @@
 <body>
   <nav class="nav" style="padding:40px ;">
     <div class="select">
-      <a href="#" class="link color-main  dropdown-toggle" id="navigation_2_dropdown_1">Home</a>
+      <a class="link color-main  dropdown-toggle" id="navigation_2_dropdown_1">{% block current %} {% endblock current %}</a>
       <div class="dropdown-menu">
-        <div>Home</div>
-        <div>About</div>
-        <div>Contact</div>
-        <div>Gallery</div>
+        <a href="{% url 'dashboard:papers' %}">Papers</a>
+        <a href="{% url 'dashboard:patents' %}">Patents</a>
+        <a>Awards</a>
+        <a>Note</a>
       </div>
     </div>
     <div class="logo">
@@ -28,9 +28,9 @@
     </div>
     <div class="row">
       <div class="col">
-        <div class="login btn btn-primary">
+        <!-- <div class="login btn btn-primary">
           <button>{{request.user.email}}</button>
-        </div>
+        </div> -->
       </div>
       <div class="col">
         <div class="login btn btn-danger">
@@ -44,6 +44,7 @@
   {% endblock body %}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="{% static 'js/navbar.js' %}"></script>
 
 </body>
 
