@@ -7,7 +7,7 @@ from django.contrib import messages
 # Create your views here.
 
 
-def login(request) -> HttpResponse:
+def loginHandler(request) -> HttpResponse:
 
     if request.method == "POST":
         sign_in_email = request.POST.get("email", None)
@@ -42,6 +42,6 @@ def login(request) -> HttpResponse:
 def forgot(request) -> HttpResponse:
     return render(request, "account/forgot.html")
 
-def logout(request)->HttpResponse:
+def logoutHandler(request)->HttpResponse:
     logout(request)
-    return render(request,"/account/login")
+    return redirect("/account/login")
