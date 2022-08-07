@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.http import HttpResponse
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model , logout
 from django.contrib import messages
 
 # Create your views here.
@@ -41,3 +41,7 @@ def login(request) -> HttpResponse:
 
 def forgot(request) -> HttpResponse:
     return render(request, "account/forgot.html")
+
+def logout(request)->HttpResponse:
+    logout(request)
+    return redirect("/account/login")

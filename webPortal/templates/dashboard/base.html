@@ -26,8 +26,18 @@
     <div class="logo">
       <img src="{% static 'images/logo.svg' %}" width="200px" />
     </div>
-    <div class="login btn btn-primary">
-      <button>{{request.user.email}}</button>
+    <div class="row">
+      <div class="col">
+        <div class="login btn btn-primary">
+          <button>{{request.user.email}}</button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="login btn btn-danger">
+          <button><a href="{% url 'account:logout' %}" role="button" style="text-decoration:none;color:white" >Logout</a></button>
+        </div>
+        
+      </div>
     </div>
   </nav>
   {% block body %}

@@ -1,6 +1,8 @@
 {% extends 'dashboard/base.html' %}
 
 {% block body %}
+
+{% if profile %}
 <div class="container">
   <div class="main-body">
     <div class="row gutters-sm">
@@ -11,11 +13,8 @@
               <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
                 width="150">
               <div class="mt-3">
-                <h4>John Doe</h4>
-                <p class="text-secondary mb-1">Full Stack Developer</p>
-                <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                <button class="btn btn-primary">Follow</button>
-                <button class="btn btn-outline-primary">Message</button>
+                <h4>{{profile.faculty_name}}</h4>
+
               </div>
             </div>
           </div>
@@ -83,7 +82,7 @@
                 <h6 class="mb-0">Faculty Name</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                Kenneth Valdez
+                {{profile.faculty_name}}
               </div>
             </div>
             <hr>
@@ -92,7 +91,7 @@
                 <h6 class="mb-0">Designation</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                fip@jukmuh.al
+                {{profile.designation}}
               </div>
             </div>
             <hr>
@@ -101,7 +100,7 @@
                 <h6 class="mb-0">Employee id</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                (239) 816-9029
+                {{profile.employee_id}}
               </div>
             </div>
             <hr>
@@ -110,7 +109,7 @@
                 <h6 class="mb-0">email</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                (320) 380-4539
+                {{profile.email}}
               </div>
             </div>
             <hr>
@@ -119,7 +118,7 @@
                 <h6 class="mb-0">Contact Number</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                Bay Area, San Francisco, CA
+                {{profile.contact_number}}
               </div>
             </div>
             <hr>
@@ -128,7 +127,7 @@
                 <h6 class="mb-0">Date of Joining</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                Bay Area, San Francisco, CA
+                {{profile.date_of_joining}}
               </div>
             </div>
           </div>
@@ -210,4 +209,7 @@
 
   </div>
 </div>
+{% else %}
+<h1>Profile nOT FOUND</h1>
+{% endif %}
 {% endblock body %}
