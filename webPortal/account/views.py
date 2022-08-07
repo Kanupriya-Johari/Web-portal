@@ -44,4 +44,4 @@ def forgot(request) -> HttpResponse:
 
 def logout(request)->HttpResponse:
     logout(request)
-    return redirect("/account/login")
+    return render(request,"/account/login")
