@@ -143,7 +143,7 @@ body {
   padding: 0 15px;
   user-select: none;
   background: none;
-  border: 2px solid #EBEAED;
+  border:none;
   line-height: 36px;
   color: #1E0E62;
   font-size: 16px;
@@ -154,6 +154,7 @@ body {
   background: transparent;
   transition: 0.25s all;
   cursor: pointer;
+  color:white;
 }
 .nav .login button:focus {
   outline: none;
