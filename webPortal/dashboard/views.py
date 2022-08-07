@@ -6,6 +6,7 @@ from account.models import Profile
 
 
 def index(request) -> HttpResponse:
+
     if request.user.is_authenticated and request.user.is_active:
         get_profile = Profile()
         try:
