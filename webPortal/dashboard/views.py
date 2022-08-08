@@ -19,6 +19,7 @@ def index(request) -> HttpResponse:
     else:
         return redirect("/account/login")
 
+
 def papers(request) -> HttpResponse:
     if request.user.is_authenticated and request.user.is_active:
         get_profile = Profile()
@@ -27,14 +28,21 @@ def papers(request) -> HttpResponse:
             get_profile = Profile.objects.get(email=request.user.email)
             get_papers = Paper.objects.filter(author=request.user)
         except get_profile.DoesNotExist or get_papers.DoesNotExist:
-            return render(request, "dashboard/papers.html", {"profile": False,"papers":False})
+            return render(
+                request, "dashboard/papers.html", {"profile": False, "papers": False}
+            )
         else:
-            return render(request, "dashboard/papers.html", {"profile": get_profile,"papers":get_papers})
+            return render(
+                request,
+                "dashboard/papers.html",
+                {"profile": get_profile, "papers": get_papers},
+            )
     else:
         return redirect("/account/login")
 
+
 def patents(request) -> HttpResponse:
     if request.user.is_authenticated and request.user.is_active:
-        return render(request,'dashboard/patents.html')
+        return render(request, "dashboard/patents.html")
     else:
         return redirect("/account/login")

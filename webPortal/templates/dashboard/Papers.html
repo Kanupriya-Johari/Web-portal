@@ -51,45 +51,21 @@
             <table class="table table-bordered table-hover">
               <thead class="thead-dark">
                 <tr>
-                  <th scope="col">Sr.</th>
                   <th scope="col">Paper name</th>
-                  <th scope="col">Published</th>
+                  <th scope="col">Published at</th>
+                  <th scope="col">Publisher</th>
                   <th scope="col">Proof</th>
                 </tr>
               </thead>
               <tbody>
                 {% for paper in papers %}
                   <tr>
-                    <th scope="row">{{ forloop.counter }}</th>
                     <td class="table-row">{{paper.paper_title}}</td>
                     <td>{{paper.paper_published_date}}</td>
-                    <td><a href="{{paper.paper_proof.url}}">View Proof</a></td>
+                    <td class="table-row">{{paper.paper_publisher}}</td>
+                    <td><a href="{{paper.paper_proof.url}}" target="_blank">View Proof</a></td>
                   </tr>
                 {% endfor %}
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
               </tbody>
             </table>
           </div>

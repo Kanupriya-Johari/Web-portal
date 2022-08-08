@@ -76,21 +76,12 @@ body {
   border: none;
   border-radius: 10px;
   text-decoration: none;
-  background: rgba(0, 0, 0, 0.05);
+  /* background: rgba(0, 0, 0, 0.05); */
   color: #1E0E62;
   font-weight: 600;
   font-size: 16px;
   display: block;
   transition: all 0.25s;
-}
-.nav .select a:before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "";
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  color: #1E0E62;
 }
 .nav .select .dropdown-menu {
   position: absolute;
