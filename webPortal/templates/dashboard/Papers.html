@@ -58,12 +58,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td class="table-row">Mark optimization engine using pandas and foremost using hello</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
+                {% for paper in papers %}
+                  <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td class="table-row">{{paper.paper_title}}</td>
+                    <td>{{paper.paper_published_date}}</td>
+                    <td><a href="{{paper.paper_proof.url}}">View Proof</a></td>
+                  </tr>
+                {% endfor %}
                 <tr>
                   <th scope="row">2</th>
                   <td>Jacob</td>
