@@ -5,7 +5,7 @@ body{
     background-color: #e2e8f0;    
 }
 .main-body {
-    padding: 15px;
+    padding: 30px;
 }
 .card {
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
@@ -161,4 +161,11 @@ body {
 }
 .nav .login button:hover {
   border-color: #1E0E62;
+}
+.table-row {
+  white-space: normal !important; 
+  max-width: 40em !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+
 }
