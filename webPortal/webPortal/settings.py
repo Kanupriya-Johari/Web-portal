@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-y6*bvt(djxurzo*w!2en5pmtk4w)@t_pv(&&y5i&#-9unkc++2
 DEBUG = True
 
 ALLOWED_HOSTS = []
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 
 # Application definition
