@@ -1,0 +1,85 @@
+{% extends 'dashboard/base.html' %}
+{% block current %}Papers{% endblock current %}
+
+{% block body %}
+{% if profile %}
+  <div class="container-fluid">
+    <div class="main-body">
+      <div class="row justify-content-around">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center">
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+                  width="150">
+                <div class="mt-3">
+                  <h4>{{profile.faculty_name}}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mt-3">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0">Faculty Name</h6>
+                <span class="text-secondary">{{profile.faculty_name}}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0">Designation</h6>
+                <span class="text-secondary">{{profile.designation}}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0">Email</h6>
+                <span class="text-secondary">{{profile.email}}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0">Date of Joining</h6>
+                <span class="text-secondary">{{profile.date_of_joining}}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0">Facebook</h6>
+                <span class="text-secondary">bootdey</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <center>
+            <h3 style="color:#17a2b8 ;">All Papers</h3>
+          </center>
+          <div class="table-responsive" style="border:1px solid rgba(0,0,0,.125);border-radius:0.25em;">
+            <table class="table table-bordered table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Paper name</th>
+                  <th scope="col">Published at</th>
+                  <th scope="col">Publisher</th>
+                  <th scope="col">Proof</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for paper in papers %}
+                  <tr>
+                    <td class="table-row">{{paper.paper_title}}</td>
+                    <td>{{paper.paper_published_date}}</td>
+                    <td class="table-row">{{paper.paper_publisher}}</td>
+                    <td><a href="{{paper.paper_proof.url}}" target="_blank">View Proof</a></td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% else %}
+<h1>Profile Not found</h1>
+{% endif %}
+<style>
+  .table {
+    table-layout: fixed;
+    margin-bottom: 0px;
+  }
+</style>
+{% endblock body %}
